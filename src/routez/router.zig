@@ -8,7 +8,7 @@ const http = @import("http.zig");
 const Request = http.Request;
 const Response = http.Response;
 
-pub const HandlerFn = fn handle(Request, Response, []const u8) callconv(.Async) anyerror!void;
+pub const HandlerFn = fn (Request, Response, []const u8) callconv(.Async) anyerror!void;
 
 pub const ErrorHandler = struct {
     handler: fn (Request, Response) void,
